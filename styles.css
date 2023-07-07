@@ -27,7 +27,7 @@ body {
 .addr-list {
 	display: flex;
 	flex-direction: column;
-	gap: 3vh;
+	gap: 1vh;
 }
 
 .addr {
