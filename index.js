@@ -11,9 +11,13 @@ const total = document.getElementsByClassName("total")[0]
 
 const price = 10
 
-function update(price){
+const convert = new CryptoConvert(/*options?*/);
 
-	p_btc = JSON.parse(httpGet(`https://api.coinconvert.net/convert/usd/btc?amount={price}`)).BTC.toFixed(10);
+async function update(price){
+
+	await convert.ready(); //Wait for the initial cache to load
+
+	p_btc = convert.USD.BTC(price).toFixed(10);
 	btc.innerHTML = `${p_btc}<mark> BTC</mark>`
 
 	p_eth = convert.USD.ETH(price).toFixed(10);
@@ -33,20 +37,16 @@ function update(price){
 
 	p_usdc = convert.USD.USDC(price).toFixed(10);
 	usdc.innerHTML = `${p_usdc}<mark> USDC</mark>`
+
+
+	//... convert any pair
+	// prices are automatically updated on background
 };
 
 function updatePrices() {
 	p_tip = tip.value
 	total.innerHTML = `Total: ${Number(price) + Number(p_tip)}$`
 	update(Number(price) + Number(p_tip))
-}
-
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
 }
 
 update(price)
