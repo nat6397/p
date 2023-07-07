@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src='https://coinconvert.net/assets/js/crypto-convert.min.js'></script>
+	<script src="index.js" defer></script>
+	<title>NAT Payment helper</title>
+</head>
+<body>
+	<h2 class="site-title">Payment helper</h2>
+
+	<div class="addr-list">
+		<div class="addr">
+			<div class="amount btc">0.0000000000<mark> BTC</mark></div>
+			<div class="string">bc1qwm9yw75nqrkeh3qhs04nv6epj4vkee7nu5hf3g</div>
+		</div>
+		<div class="addr">
+			<div class="amount eth">0.0000000000<mark> ETH</mark></div>
+			<div class="string">0x36DEa80E60Fe1dE0bbf8035194C90aaeEa7F972f</div>
+		</div>
+		<div class="addr">
+			<div class="amount sol">0.0000000000<mark> SOL</mark></div>
+			<div class="string">EtyKATwniVpDxVxYzerBh6RmsyEz3SerXHJP7nedsncg</div>
+		</div>
+		<div class="addr">
+			<div class="amount ltc">0.0000000000<mark> LTC</mark></div>
+			<div class="string">Lg4Se2BukRAhC2RAPcFFN8BsDpTwjdz9Wt</div>
+		</div>
+		<div class="addr">
+			<div class="amount doge">0.0000000000<mark> DOGE</mark></div>
+			<div class="string">DDqQzVByZJBVv7BcoEffNTrfmP4sjE7RJm</div>
+		</div>
+		<div class="addr">
+			<div class="amount usdt">0.0000000000<mark> USDT</mark></div>
+			<div class="string">0x36DEa80E60Fe1dE0bbf8035194C90aaeEa7F972f</div>
+		</div>
+		<div class="addr">
+			<div class="amount usdc">0.0000000000<mark> USDC</mark></div>
+			<div class="string">0x36DEa80E60Fe1dE0bbf8035194C90aaeEa7F972f</div>
+		</div>
+	</div>
+
+	<div class="total genericText">Total: 10$</div>
+
+	<div class="tip">
+		<h2 class="genericText">Tip:</h2>
+		<input type="number" name="tip" id="tip" value="0" min="0" max="999" class="tipInput" onchange="updatePrices()">
+		<h2 class="genericText">$</h2>
+	</div>
+</body>
+</html>
