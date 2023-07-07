@@ -49,4 +49,13 @@ function updatePrices() {
 	update(Number(price) + Number(p_tip))
 }
 
-update(price)
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+// update(price)
+console.log(httpGet("https://api.coinconvert.net/convert/usd/btc?amount=10"))
